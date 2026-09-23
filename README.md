@@ -16,4 +16,4 @@ esteticista no estaría disponible. También habrá que gestionar de forma intel
 los tiempos muertos ya que los distintos servicios que ofrece el cliente tienen distintos tiempos de duración.
 
 # Configuración inicial
-Toda la configuración inicial se encuentra en [Configuracion.md](./configuracion.md)
+Toda la configuración inicial se encuentra en [Configuracion.md](./Configuracion.md)

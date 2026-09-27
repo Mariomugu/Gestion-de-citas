@@ -23,6 +23,7 @@ Para resolver este problema, la propuesta consiste en desarrollar una plataforma
 
 # Datos necesarios para la solución
 Los datos necesarios para poder solucionar el problema, tales como el horario laboral o los servicios ofertados con su respectivo precio y duración, se obtendrán directamente de la esteticista, por tanto no será necesario obtener ninguna información de fuentes externas.
+
 Para el almacenamiento y gestión de los servicios se utilizará una hoja de cálculo. En ella, cada servicio tendrá asociado su precio y duración estimada, permitiendo colsultar y extraer los datos necesarios en cualquier momento.
 
 # Configuración inicial

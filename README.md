@@ -13,12 +13,7 @@ Cuando Eva reanuda la depilación de cejas son las 16:15, hora en la que el serv
 
 ![Fotografía de la tarjeta de rol](imagenes/cliente.jpeg)
 
-# Como solucionarlo como desarrollador
-Para resolver los problemas descritos(interrupción del servicio, pérdida de tiempo efectivo y retrasos) debemos generar una solución que permita gestionar las citas sin requerir la intervernción de la esteticista. Si dejamos de requerir su intervención, se eliminan las interrupciones en la realización de los servicios, evitando sus problemas derivados:la pérdida de tiempo efectivo y la acumulación de retrasos. 
-
-Una propuesta que permite que cada cliente reserve sus citas de forma autónoma, liberando la intervención de la esteticista, consiste en desarrollar una plataforma web o aplicación móvil que permita a los clientes consultar los servicios disponibles, seleccionar una fecha y hora, y realizar su propia reserva.
-
-## Lógica de negocio
+# Lógica de negocio
   - La selección de días y horas debe restringirse al horario y jornada laboral configurado por la esteticista.
   - El sistema debe garantizar que no se reserven dos servicios en un mismo intervalo de tiempo.
   - La asignación de citas debe implementar un algoritmo o conjunto de reglas que reduzca los tiempos ociosos entre servicios consecutivos.

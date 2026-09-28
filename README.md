@@ -20,8 +20,10 @@ Es un lunes de octubre por la mañana y está lloviendo. Lucía va en bici al tr
 Se van a utilizar los datos de accidentes de tráfico de la ciudad de Madrid disponibles en el [Portal de datos abiertos del Ayuntamiento de Madrid](https://datos.madrid.es/dataset/300228-0-accidentes-trafico-detalle/downloads?hierarchy=2019), se utilizarán los archivos en formato csv del año 2019 en adelante.
 
 ## Ejemplo de entrada en los ficheros
+```csv
 num_expediente;fecha;hora;localizacion;numero;cod_distrito;distrito;tipo_accidente;estado_meteorológico;tipo_vehiculo;tipo_persona;rango_edad;sexo;cod_lesividad;lesividad;coordenada_x_utm;coordenada_y_utm;positiva_alcohol;positiva_droga
 2018S017842;04/02/2019;9:10:00;CALL. ALBERTO AGUILERA, 1;1;1;CENTRO;Colisión lateral;Despejado;Motocicleta > 125cc;Conductor;De 45 a 49 años;Hombre;7;Asistencia sanitaria sólo en el lugar del accidente;440068;4475679;N;NULL
+```
 
 # Configuración inicial
 Toda la configuración inicial se encuentra en [Configuracion.md](./Configuracion.md)

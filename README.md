@@ -43,7 +43,7 @@ Para el almacenamiento y gestión de los servicios se utilizará una hoja de cá
   - Piernas enteras
   - Espalda
 
-Para consultar la duración estimada y precio de cada servicio revisar [servicios_ofertados.xlsx](./servicios_ofertados.xlsx). El tiempo estimado es vital para la lógica de negocio, para evitar solapamiento de servicios. El precio es dato de alto interés para los usuarios. 
+Para consultar la duración estimada y precio de cada servicio revisar [servicios_ofertados.csv](./servicios_ofertados.csv). El tiempo estimado es vital para la lógica de negocio, para evitar solapamiento de servicios. El precio es dato de alto interés para los usuarios. 
 
 # Configuración inicial
 Toda la configuración inicial se encuentra en [Configuracion.md](./Configuracion.md)

@@ -1,46 +1,27 @@
+# Riesgo vial urbano para ciclistas y usuarios de patinete según franja horaria y clima
 # Descripción del problema
-Una esteticista solo ofrece la posibilidad de gestionear las citas presencialmente. Esto tiene una serie de inconvenientes durante su día a día:
-  - **Interrupicón del servicio:** Tiene que interrumpir el servio que está realizando para gestionar las citas de otros clientes. 
-  - **Pérdida de tiempo efectivo:** El tiempo utilizado en anotar nuevas citas se resta al tiempo asignado al tratamiento en curso. 
-  - **Efecto dominó en la agenda:** La acumulación de retrasos desajusta la planificación del resto del día, afectando la puntulidad de las citas posteriores. 
+Las personas que se desplazan a diario en bicicleta o en patinete (VMP) por una ciudad eligen su ruta con criterios como la duración o la comodidad, pero no saben en qué calles, a qué horas y con qué clima se acumulan los accidentes que afectan a su tipo de vehículo. Como no tienen ese dato, toman decisiones a ciegas: una calle que parece tranquila puede concentrar muchos accidentes en la franja en la que la usan, y otra que les da miedo puede ser en la práctica menos problemática.
 
 ## Caso concreto:
-Es un martes a las 16:00. Eva, la esteticista, está realizando un servicio de depilación de cejas con una duración estimada de 15 minutos (finalización prevista a las 16:15).
-
-A las 16:10, llegan dos clientas al local (Rosa y Ana) para pedir cita. Eva se ve obligada a pausar el servicio en curso para agendar el servicio de uñas de Rosa y la sesión de láser de Ana.
-
-Cuando Eva reanuda la depilación de cejas son las 16:15, hora en la que el servicio debería haber concluido. Como todavía le restan 7 minutos de trabajo, finaliza a las 16:22. Dado que la siguiente cita estaba programada para las 16:20, el horario del resto de la tarde queda desfasado, acumulando retrasos y tiempos de espera para las clientas posteriores.
+Es un lunes de octubre por la mañana y está lloviendo. Lucía va en bici al trabajo y tiene tres formas de llegar, que pasan por la calle A, la calle B o la calle C. Sale a las 8:15, en hora punta. No sabe si alguna de esas calles tiene un historial de accidentes con bicicletas en esa franja y con lluvia, ni si es peor que las otras dos. Hoy elegirá por intuición, y quizá acabe usando la calle donde más ciclistas han sufrido accidentes en días como este.
 
 ![Fotografía de la tarjeta de rol](imagenes/cliente.jpeg)
 
 # Lógica de negocio
-  - La selección de días y horas debe restringirse al horario y jornada laboral configurado por la esteticista.
-  - El sistema debe garantizar que no se reserven dos servicios en un mismo intervalo de tiempo.
-  - La asignación de citas debe implementar un algoritmo o conjunto de reglas que reduzca los tiempos ociosos entre servicios consecutivos.
+  - **Extraer** los registros del fichero CSV.
+  - **Analizar** cada registro para agrupar las filas que comparten número de expediente y obtener así accidentes distintos, ya que cada fila es una persona implicada y un mismo accidente aparece varias veces.
+  - **Filtrar** los accidentes en los que al menos una persona implicada iba en bicicleta o en VMP, según el tipo de vehículo de cada fila.
+  - **Validar** los registros, descartando o marcando como desconocidos los que carecen de hora, de estado meteorológico o de localización.
+  - **Normalizar** los nombres de calle del fichero y los escritos por el usuario (mayúsculas, tildes, abreviaturas como "CALL.", "AVDA." o "GTA.") para que puedan compararse.
+  - **Calcular** un coeficiente de riesgo por calle, franja horaria y estado meteorológico, a partir del número de accidentes en esa combinación.
+  - **Generar** una calificación de peligrosidad para cada calle de la lista, comparando su coeficiente con el del conjunto de calles de la ciudad, e indicando "sin datos suficientes" cuando la calle apenas tenga registros.
 
 # Datos necesarios para la solución
-Los datos necesarios para poder solucionar el problema, tales como el horario laboral o los servicios ofertados con su respectivo precio y duración, se obtendrán directamente de la esteticista, por tanto no será necesario obtener ninguna información de fuentes externas.
+Se van a utilizar los datos de accidentes de tráfico de la ciudad de Madrid disponibles en el [Portal de datos abiertos del Ayuntamiento de Madrid](https://datos.madrid.es/dataset/300228-0-accidentes-trafico-detalle/downloads?hierarchy=2019), se utilizarán los archivos en formato csv del año 2019 en adelante.
 
-Para el almacenamiento y gestión de los servicios se utilizará una hoja de cálculo. En ella, cada servicio tendrá asociado su precio y duración estimada, permitiendo colsultar y extraer los datos necesarios en cualquier momento.
-
-# Servicios ofertados
-## Servicios faciales
-  - Limpieza facial
-  - Tratamiento facial
-## Maquillajes
-  - Maquillaje de día
-  - Maquillade de madrina
-  - Maquillaje de novia
-## Depilación con cera
-  - Labios y cejas
-  - Medias piernas
-  - Depilación completa
-## Depilación láser
-  - Ingles y axilas
-  - Piernas enteras
-  - Espalda
-
-Para consultar la duración estimada y precio de cada servicio revisar [servicios_ofertados.csv](./servicios_ofertados.csv). El tiempo estimado es vital para la lógica de negocio, para evitar solapamiento de servicios. El precio es dato de alto interés para los usuarios. 
+## Ejemplo de entrada en los ficheros
+num_expediente;fecha;hora;localizacion;numero;cod_distrito;distrito;tipo_accidente;estado_meteorológico;tipo_vehiculo;tipo_persona;rango_edad;sexo;cod_lesividad;lesividad;coordenada_x_utm;coordenada_y_utm;positiva_alcohol;positiva_droga
+2018S017842;04/02/2019;9:10:00;CALL. ALBERTO AGUILERA, 1;1;1;CENTRO;Colisión lateral;Despejado;Motocicleta > 125cc;Conductor;De 45 a 49 años;Hombre;7;Asistencia sanitaria sólo en el lugar del accidente;440068;4475679;N;NULL
 
 # Configuración inicial
 Toda la configuración inicial se encuentra en [Configuracion.md](./Configuracion.md)

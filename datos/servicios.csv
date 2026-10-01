@@ -1,0 +1,12 @@
+Servicio;Duracion(minutos);Maquinaria;
+Limpieza facial;75;facial;
+Tratamiento facial;75;facial;
+Maquillaje de dia ;60;maquillaje;
+Maquillaje madrina;75;maquillaje;
+Maquillaje novia;75;maquillaje;
+Cera labios y cejas;15;cera;
+Cera medias piernas;20;cera;
+Cera completa;60;cera;
+Laser ingles y axilas;20;laser;
+Laser piernas enteras;40;laser;
+Laser espalda;25;laser;

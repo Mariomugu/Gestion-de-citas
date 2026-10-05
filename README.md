@@ -24,7 +24,7 @@ Los datos necesarios para la resolución del problema me los ha proporcionado mi
 # Justificación de despliegue en la nube
 Aunque mi madre desarrolla su actividad principalmente en su lugar de trabajo, la gestión de las citas no se realiza exclusivamente allí. En muchas ocasiones recibe y organiza las solicitudes de los clientes mientras se encuentra en casa o en cualquier otro lugar. Por este motivo, limitar el sistema a un ordenador situado en el lugar de trabajo dificultaría su utilización y obligaría a realizar la planificación de las citas desde un único dispositivo.
 
-Mediante el despliegue en la nube, el sistema podrá estar disponible de forma remota a través de Internet, permitiendo que mi madre pueda consultar las citas y realizar su planificación desde cualquier lugar, utilizando un ordenador, teléfono móvil u otro dispositivo.
+Mediante el despliegue en la nube, el sistema podrá estar disponible de forma remota a través de Internet, permitiendo que mi madre realizar su planificación desde cualquier lugar, utilizando un ordenador, teléfono móvil u otro dispositivo.
 
 # Configuración inicial
 Toda la configuración inicial se encuentra en [Configuracion.md](./Configuracion.md)

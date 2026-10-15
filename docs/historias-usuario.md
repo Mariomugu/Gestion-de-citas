@@ -6,10 +6,10 @@ Hoy asigna las citas por orden de llegada, porque no tiene una forma sencilla de
 
 Datos necesarios: [horario](../datos/horario.csv), [maquinaria](../datos/maquinaria.csv) y [servicios](../datos/servicios.csv)
 
-[Jornada 1](./user-journeys.md)
+[Viaje 1](./user-journeys.md)
 
 ## HU002: No sé si puedo añadir nuevas citas en la semana actual ya planificada
 Una vez confirmado el plan de la semana, Eva sigue recibiendo solicitudes de clientas. Algunas encajarán en los huecos que quedaron libres(si hay). Otras pueden
 encajar porque una clienta cancela y deja un hueco que antes no existía. En ambos casos, Eva deber ser capaz de dar una hora a la nueva clienta sin cambiar la hora de las que ya la conocen y manteniendo bajos los tiempos de preparación y recogida. Hoy no sabe con rapidez si una cita nueva cabe, ni cuál es el mejor hueco para ella.
 
-[Jornadas 2 y 3](./user-journeys.md)
+[Viajes 2 y 3](./user-journeys.md)

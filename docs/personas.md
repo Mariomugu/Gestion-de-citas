@@ -1,0 +1,3 @@
+# Personas
+## Eva
+Eva tiene 48 años, es madre de dos hijos y gestiona su propio negocio de estética. Trabaja sola: ella misma realiza todos los servicios que ofrece, todos en un mismo espacio de trabajo, y también se encarga de su agenda. Al llevarlo todo ella sola, apenas le queda tiempo para planificar, así que asigna las citas por orden de llegada en lugar de buscar el orden que más tiempo le ahorraría.

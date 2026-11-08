@@ -1,6 +1,15 @@
 # Historias de usuario
 ## HU001: No sé cuál es el mejor orden para las citas
-Eva es esteticista autónoma y trabaja sola. Ofrece varios servicios en un mismo espacio y cada tipo de servicio usa un equipamiento distinto (facial, maquillaje, láser o cera). Cada equipamiento necesita un tiempo de preparación antes de usarlo y un tiempo de limpieza después. Cuando entre dos citas seguidas cambia de tipo de servicio, tiene que recoger el equipamiento anterior y preparar el siguiente desaprovechando tiempo útil.
+Eva es esteticista autónoma y trabaja sola. Ofrece varios servicios en un mismo espacio y cada tipo de servicio usa un equipamiento distinto (facial, maquillaje, láser o cera). Cada equipamiento necesita un tiempo de preparación antes de usarlo y un tiempo de limpieza después.
+
+Cuando entre dos citas seguidas cambia el equipamiento, Eva tiene que limpiar el
+anterior y preparar el siguiente y durante ese tiempo no atiende a ninguna
+clienta. Dos servicios distintos que usan el mismo equipamiento (por ejemplo,
+limpieza facial y tratamiento facial) no provocan cambio. El tiempo perdido en un
+cambio es la limpieza del equipamiento anterior más la preparación del siguiente:
+Solo se cuenta el tiempo perdido entre dos citas seguidas, no la preparación de la primera cita de un turno ni la
+limpieza de la última. Una planificación es mejor cuanto menos tiempo total se
+pierde en cambios.
 
 Cuando una clienta pide un servicio, indica también cuándo puede acudir. Su
 disponibilidad puede ser:
